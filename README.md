@@ -7,7 +7,11 @@ cd C:\laragon\www
 ```bash
 composer create-project laravel/laravel cuti-frontend
 ```
-### 2. Jalanin Project
+### 3. Jalanin Project
 ```bash
 php artisan serve
+```
+### 4. Buat Fitur PDF
+```bash
+composer require barryvdh/laravel-dompdf
 ```
