@@ -34,6 +34,9 @@
         <input type="text" id="nidn" name="nidn" class="form-control" value="{{ $dosen['nidn'] }}" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Update</button>
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ route('dosen.index') }}" class="btn btn-secondary">Batal</a>
+    </div>
 </form>
 @endsection

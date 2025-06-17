@@ -31,7 +31,7 @@
 
 <!-- Sidebar -->
 <div class="sidebar d-flex flex-column p-3">
-    <h4 class="text-white mb-4">CutiApp</h4>
+    <h4 class="text-white mb-4">CutiCuti</h4>
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">

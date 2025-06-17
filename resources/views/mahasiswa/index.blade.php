@@ -19,6 +19,9 @@
         @csrf @method('DELETE')
         <button onclick="return confirm('Yakin hapus?')" class="btn btn-danger btn-sm">Hapus</button>
       </form>
+     <a href="{{ route('mahasiswa.download.pdf', $m['npm']) }}" class="btn btn-sm btn-info">Unduh PDF</a>
+
+
     </td>
   </tr>
   @endforeach

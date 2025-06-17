@@ -10,6 +10,9 @@
       <input type="{{ $field=='email'?'email':'text' }}" name="{{ $field }}" value="{{ $mahasiswa[$field] }}" class="form-control" required>
     </div>
   @endforeach
-  <button type="submit" class="btn btn-primary">Update</button>
+  <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ route('mahasiswa.index') }}" class="btn btn-secondary">Batal</a>
+    </div>
 </form>
 @endsection

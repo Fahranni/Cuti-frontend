@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MahasiswaController extends Controller
 {
@@ -69,6 +70,22 @@ public function destroy($npm)
 {
     Http::delete("{$this->api}/{$npm}");
     return redirect()->route('mahasiswa.index')->with('success','Mahasiswa berhasil dihapus');
+}
+public function downloadPdf($npm)
+{
+    $response = Http::get("{$this->api}/{$npm}");
+
+    if (!$response->successful()) {
+        return back()->with('error', 'Gagal mengambil data mahasiswa.');
+    }
+
+    $mahasiswa = $response->json();
+    if (isset($mahasiswa[0])) {
+        $mahasiswa = $mahasiswa[0]; // handle jika response berbentuk array
+    }
+
+    $pdf = Pdf::loadView('mahasiswa.single-pdf', compact('mahasiswa'));
+    return $pdf->download("mahasiswa_{$mahasiswa['npm']}.pdf");
 }
 
 }

@@ -30,6 +30,10 @@
     <div class="col-md-6"><label>No HP</label><input type="text" name="no_hp" class="form-control" required></div>
     <div class="col-md-6"><label>Email</label><input type="email" name="email" class="form-control" required></div>
   </div>
-  <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+  <div class="mt-3">
+    <button type="submit" class="btn btn-primary">Simpan</button>
+    <a href="{{ route('mahasiswa.index') }}" class="btn btn-secondary">Batal</a>
+  </div>
+
 </form>
 @endsection

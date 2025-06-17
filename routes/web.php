@@ -5,6 +5,9 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DashboardController;
 
+Route::get('/', function () {
+    return redirect('/dashboard');
+});
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 //Route Dosen
@@ -24,4 +27,6 @@ Route::prefix('mahasiswa')->group(function () {
     Route::get('/{id}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
     Route::put('/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
     Route::delete('/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+    Route::get('/mahasiswa/{npm}/download', [MahasiswaController::class, 'downloadPdf'])->name('mahasiswa.download.pdf');
+
 });
